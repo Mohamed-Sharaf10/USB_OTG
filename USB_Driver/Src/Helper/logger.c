@@ -8,6 +8,9 @@
 /** \brief Redirects `printf()` output to the serial wire out (SWO).
  * This function overrides a weak function symbol and is not to be used directly.
  */
+
+extern LogLevel system_log_level ;
+
 int _write(int file, char *ptr, int len)
 {
   int i=0;
@@ -67,7 +70,7 @@ void log_debug(char const * const format, ...)
 }
 /** \brief Log the content of an array.
  * \param label The label of the array.
- * \param array Pointer to the array.
+ * \param Pointer to the array.
  * \param len The length of data in bytes.
  */
 void log_debug_array(char const * const label, void const *array, uint16_t const len)

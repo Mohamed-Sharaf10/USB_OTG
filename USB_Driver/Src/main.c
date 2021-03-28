@@ -20,12 +20,29 @@
 #include "stm32f4xx.h"
 #include <stdio.h>
 #include <Helper/logger.h>
+#include "Delay.h"
+#include "port.h"
+#include "DIO.h"
+#include "usbd_framework.h"
 
-
+static void int_task();
 
 int main(void)
 {
+	int_task();
 	log_info("Hello My name is %s \n","Mohamed Sharaf");
-    /* Loop forever */
-	for(;;);
+	Dio_WriteChannel(DIO_GREEN_LED,STD_HIGH);
+
+  while (1)
+  {
+  }
+
+}
+
+static void int_task()
+{
+	// Initialize GPIO pins
+	Port_Init(&portConfig);
+	Delay_Init();
+	usbd_initialization();
 }

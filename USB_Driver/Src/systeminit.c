@@ -10,12 +10,15 @@
 #include "Helper/logger.h"
 
 LogLevel system_log_level = LOG_LEVEL_DEBUG;
+uint32_t SystemCoreClock=75000000;
 
 static void configure_clock();
+
 void SystemInit(void)
 {
 	configure_clock();
 }
+
 static void configure_clock()
 {
 
