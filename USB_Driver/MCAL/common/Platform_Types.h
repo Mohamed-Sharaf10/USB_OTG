@@ -1,4 +1,4 @@
-#if (!defined PLATFORM_TYPES_H)
+#ifndef PLATFORM_TYPES_H
 #define PLATFORM_TYPES_H
 
 
@@ -48,8 +48,5 @@ typedef float float32;
 
 typedef double float64;
 
-/*==================[inclusions]=============================================*/
 
-/* !LINKSTO Base.ConfigScheme.PlatformTypesGeneration,1 */
-
-#endif /* if (!defined PLATFORM_TYPES_H) */
+#endif
